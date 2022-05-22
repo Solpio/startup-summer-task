@@ -1,0 +1,81 @@
+.repositories {
+  width: 100%;
+  &__title{
+    @include media-laptop{
+      text-align: center;
+  }
+  }
+  &__table {
+    margin-top: 28px;
+    &--item {
+      margin-top: 24px;
+      background-color: $color-white;
+      box-sizing: border-box;
+      padding: 24px 0 24px 32px;
+      @include media-desktop {
+        margin-right: 20px;
+      }
+      @include media-laptop {
+        margin-left: 20px;
+      }
+      .repo_name {
+        color: $color-link;
+      }
+      .repo_description {
+        @include font($size: 1.6rem, $weight: 400);
+      }
+    }
+  }
+}
+
+.pagination {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 24px;
+  @include media-laptop {
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+  .amout_of_items {
+    display: block;
+    @include font($size: 1.4rem, $weight: 400);
+    color: $color-pagination-item-count;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    @include font($size: 1.4rem, $weight: 400);
+    color: $color-pagination-item-count;
+    .pagination__button {
+      display: block;
+      height: 24px;
+      width: 24px;
+      background-color: $color-main;
+      background-repeat: no-repeat;
+      background-position: center;
+      cursor: pointer;
+      &--left {
+        background-image: url('../assets/img/left-grey.svg');
+        &:hover {
+          background-image: url('../assets/img/left-blue.svg');
+        }
+      }
+      &--right {
+        background-image: url('../assets/img/right-grey.svg');
+        &:hover {
+          background-image: url('../assets/img/right-blue.svg');
+        }
+      }
+    }
+    .page--current {
+      color: $color-main;
+      background-color: $color-page-active;
+      box-sizing: border-box;
+      padding: 6px 2px;
+      border-radius: 3px;
+    }
+  }
+}

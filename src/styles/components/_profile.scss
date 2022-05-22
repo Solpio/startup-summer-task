@@ -1,0 +1,61 @@
+.profile {
+    @include media-desktop{
+        margin-left: 10px;
+    }
+    @include media-laptop {
+        margin: 0 auto;
+    }
+    &__img{
+        display: block;
+        width: 280px;
+        height: 280px;
+        border-radius: 50% !important;
+        @include media-laptop{
+            margin: 0 auto;
+            width: 140px;
+            height: 140px;
+        }
+    }
+    &__info{
+        margin-top: 28px;
+        @include media-laptop{
+            text-align: center;
+        }
+    }
+
+    &__username{
+        @include font($size:1.8rem, $weight: 400);
+        color: $color-link;
+    }
+    &__followers{
+        margin-top: 25px;
+        display: flex;
+        gap: 20px;
+        @include font($size: 1.6rem, $weight: 400);
+    }
+    &__logo{
+        margin-right: 8px;
+    }
+}
+
+.followers{
+    display: flex;
+    align-items: center;
+    .two_people_logo{
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url("../assets/img/two_people.svg");
+    }
+}
+
+.following{
+    display: flex;
+    align-items: center;
+    .one_people_logo{
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url("../assets/img/one_people.svg");
+    }
+}
