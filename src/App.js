@@ -1,12 +1,25 @@
-import '../src/scss/style.scss';
-import Main from './layouts/Home';
-import GithubSearcher from './modules/GithubSearcher';
+import './scss/style.scss';
+import React from 'react';
+import Header from './layouts/Header';
+import Main from './layouts/Main';
+import ProfileSearcher from './modules/ProfileSearcher';
 
 function App() {
-  const search = new GithubSearcher('');
+  const [requestValue, setRequestValue] = React.useState('');
+  const [profileValue, setProfileValue] = React.useState('');
+  const user = new ProfileSearcher(requestValue);
+
+  async function Find(user) {
+    await user.getProfile();
+  }
+  React.useEffect(() => {
+    if (requestValue) Find(user).then(() => setProfileValue(user));
+  }, [requestValue]);
   return (
-    <Main searcher={search}/>
+    <>
+      <Header setRequestValue={setRequestValue} />
+      <Main user={profileValue} />
+    </>
   );
 }
-
 export default App;
