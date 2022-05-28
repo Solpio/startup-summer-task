@@ -6,4 +6,7 @@
 [+] Rewrite pagination, now it works w\o react-pagination lib\
 [+] Clear code, delete useless classes components, remove them on functional components\
 
+TO DO:\
+1. Style pages: "NoPage", "NoRepos", "Start Page"
+
 Deploy: https://genuine-palmier-1f1108.netlify.app/
